@@ -36,6 +36,41 @@ public class Prioridade {
                         prioridades.add(entrada);
 			
             }
+			temposIniciais = new int[n];
+			temposFinais = new int[n];
+			cpEntrada = (ArrayList) entrada_1.clone();
+			ordemExecucao = "";
+			tempoAtual = (int) entrada_1.get(0);
+			qteProcessos = n;
+			
+			while(qteProcessos > 0) {
+				processos = new ArrayList(0);
+				for (int i =0; i< n;i++) {
+					if((int)entrada_1.get(i) != -1 && (int)entrada_1.get(i)<=tempoAtual) {
+						processos.add(i);
+					}
+				}
+				
+				if(processos.isEmpty()) {
+					tempoAtual++;
+				}else {
+						execucao = (int) processos.get(0);
+						for (int i = 0; i < processos.size(); i++) {
+							idProcessoAtual = (int)processos.get(i);
+							if ((int)prioridades.get(idProcessoAtual) < (int)prioridades.get(execucao)) {
+								execucao = (int)processos.get(i);
+								
+						
+						}
+					}
+				temposIniciais[execucao] = tempoAtual;
+				tempoAtual +=(int) burst.get(execucao);
+				temposFinais[execucao] = tempoAtual;
+				entrada_1.set(execucao, -1);
+				ordemExecucao +="p" + (execucao + 1) + " ";
+				qteProcessos--;		
+				}
+				
 	}
 
 }
