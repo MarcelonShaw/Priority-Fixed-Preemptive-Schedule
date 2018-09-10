@@ -16,25 +16,25 @@ public class Prioridade {
 
 		System.out.println("quantos processadores deseja armazenar?");
 		n = scanner.nextInt();
-               while(n!= 0) {
-            contTeste++;
-            processos = new ArrayList();
-            entrada_1 = new ArrayList();
-            burst = new ArrayList();
-            prioridades = new ArrayList();
-
-            for(int i = 0; i < n; i++ ) {
-                System.out.println("Entrada do processo p" + (i + 1));
-                entrada = scanner.nextInt();
-                entrada_1.add(entrada);
-                System.out.println("Qual o burst de p" + (i +1));
-                entrada = scanner.nextInt();
-                burst.add(entrada);
-                System.out.println("Qual a prioridade de p" + (i +1));
-                entrada =scanner.nextInt();
-                prioridades.add(entrada);
-
-
+               
+		while(n!= 0) {
+			contTeste++;
+                        processos = new ArrayList();
+                        entrada_1 = new ArrayList();
+                        burst = new ArrayList();
+                        prioridades = new ArrayList();
+			
+                for(int i = 0; i < n; i++ ) {
+			System.out.println("Entrada do processo p" + (i + 1));
+                        entrada = scanner.nextInt();
+                        entrada_1.add(entrada);
+                        System.out.println("Qual o burst de p" + (i +1));
+                        entrada = scanner.nextInt();
+                        burst.add(entrada);
+                        System.out.println("Qual a prioridade de p" + (i +1));
+                        entrada =scanner.nextInt();
+                        prioridades.add(entrada);
+			
             }
 	}
 
