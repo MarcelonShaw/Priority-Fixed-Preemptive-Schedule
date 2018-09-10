@@ -35,7 +35,7 @@ public class Prioridade {
                         entrada =scanner.nextInt();
                         prioridades.add(entrada);
 			
-            }
+        }
 	temposIniciais = new int[n];
 	temposFinais = new int[n];
 	cpEntrada = (ArrayList) entrada_1.clone();
@@ -58,9 +58,7 @@ public class Prioridade {
 	for (int i = 0; i < processos.size(); i++) {
 	idProcessoAtual = (int)processos.get(i);
 	if ((int)prioridades.get(idProcessoAtual) < (int)prioridades.get(execucao)) {
-	execucao = (int)processos.get(i);
-								
-						
+	execucao = (int)processos.get(i);					
 	}
 	}
 	temposIniciais[execucao] = tempoAtual;
@@ -69,7 +67,8 @@ public class Prioridade {
 	entrada_1.set(execucao, -1);
 	ordemExecucao +="p" + (execucao + 1) + " ";
 	qteProcessos--;		
-			}
+	}
+	}
 	tempoExecucao = tempoExecucao / n;
         tempoEspera = tempoEspera / n;
         System.out.println("Processamento - parte" + contTeste);
@@ -92,5 +91,3 @@ public class Prioridade {
 
 }
 }	
-
-
