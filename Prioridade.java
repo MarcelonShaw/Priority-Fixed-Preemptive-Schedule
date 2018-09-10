@@ -36,12 +36,12 @@ public class Prioridade {
                         prioridades.add(entrada);
 			
             }
-			temposIniciais = new int[n];
-			temposFinais = new int[n];
-			cpEntrada = (ArrayList) entrada_1.clone();
-			ordemExecucao = "";
-			tempoAtual = (int) entrada_1.get(0);
-			qteProcessos = n;
+	temposIniciais = new int[n];
+	temposFinais = new int[n];
+	cpEntrada = (ArrayList) entrada_1.clone();
+	ordemExecucao = "";
+	tempoAtual = (int) entrada_1.get(0);
+	qteProcessos = n;
 			
 			while(qteProcessos > 0) {
 			processos = new ArrayList(0);
@@ -70,7 +70,27 @@ public class Prioridade {
 			ordemExecucao +="p" + (execucao + 1) + " ";
 			qteProcessos--;		
 			}
-				
-	}
+			tempoExecucao = tempoExecucao / n;
+        tempoEspera = tempoEspera / n;
+        System.out.println("Processamento - parte" + contTeste);
+
+        formato = decimal.format(tempoExecucao);
+        saida = "Tempo medio de execucao: " + formato + "s";
+        saida = saida.replace(".", ",");
+        System.out.println(saida);
+
+        formato = decimal.format(tempoEspera);
+        saida = "Tempo medio de espera:" + formato + "s";
+        saida = saida.replace(".", ",");
+        System.out.println(saida);
+
+        System.out.println(ordemExecucao);
+        System.out.println();
+        System.out.println("Deseja armazenar quantos processadores?");
+        n = scanner.nextInt();
+        }
 
 }
+}	
+	}
+
